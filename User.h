@@ -18,9 +18,9 @@ public:
 	String^ security_q;
 	String^ confirm_password;
 	String^ age;
-//	String^ rr = "Data Source=DESKTOP-9T5F2B3;Initial Catalog=mono;Integrated Security=True";
+	String^ rr = "Data Source=DESKTOP-9T5F2B3;Initial Catalog=mono;Integrated Security=True";
 
-	String^ rr = "Data Source=localhost\\sqlexpress;Initial Catalog=newmono;Integrated Security=True";
+	//String^ rr = "Data Source=localhost\\sqlexpress;Initial Catalog=newmono;Integrated Security=True";
 
 
 	void complain(String^ x)

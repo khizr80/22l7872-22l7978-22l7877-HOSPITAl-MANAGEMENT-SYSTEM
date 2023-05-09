@@ -83,4 +83,5 @@ public:
 			MessageBox::Show("Id or security question incorrect", "Forget password Failure", MessageBoxButtons::OK);
 		}
 	}
+
 };

@@ -185,4 +185,22 @@ public:
 			MessageBox::Show("Failed to connect to database", "Database Connection Error", MessageBoxButtons::OK);
 		}
 	}
+	void Upcoming_patient()
+	{
+		try
+		{
+
+			String^ connString = rr;
+			SqlConnection sqlConn(connString);
+			sqlConn.Open();
+			String^ sqlQuery = "SELECT TOP 1 doctor_name, patient_id, date, doctor_id FROM appointment WHERE patient_id = @patient_id AND date > GETDATE() ORDER BY date ASC";
+			SqlCommand^ sqlCommand = gcnew SqlCommand(sqlQuery, % sqlConn);
+	//		sqlCommand->Parameters->AddWithValue("@patient_id", patient_id);
+			SqlDataReader^ reader = sqlCommand->ExecuteReader();
+		}
+		catch (Exception^ e)
+		{
+			MessageBox::Show("Failed to connect to database", "Database Connection Error", MessageBoxButtons::OK);
+		}
+	}
 };

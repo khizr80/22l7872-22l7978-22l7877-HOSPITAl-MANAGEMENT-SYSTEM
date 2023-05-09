@@ -22,8 +22,8 @@ namespace temp {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
-		//String^ rr = "Data Source=DESKTOP-9T5F2B3;Initial Catalog=mono;Integrated Security=True";
-		String^ rr = "Data Source=localhost\\sqlexpress;Initial Catalog=newmono;Integrated Security=True";
+		String^ rr = "Data Source=DESKTOP-9T5F2B3;Initial Catalog=mono;Integrated Security=True";
+		//String^ rr = "Data Source=localhost\\sqlexpress;Initial Catalog=newmono;Integrated Security=True";
 
 	public:
 		MyForm(void)
@@ -102,25 +102,25 @@ namespace temp {
 	private: System::Windows::Forms::Label^ label3;
 
 
-	private: System::Windows::Forms::Panel^ view_detail_panel;
-	private: System::Windows::Forms::Button^ view_detail_panel_back_button;
-	private: System::Windows::Forms::Label^ view_detail_panel_security_q_label;
-	private: System::Windows::Forms::TextBox^ view_detail_security_q_textbox;
-	private: System::Windows::Forms::Label^ view_detail_panel_password_label;
-	private: System::Windows::Forms::TextBox^ view_detail_panel_password_textbox;
-	private: System::Windows::Forms::Label^ view_detail_panel_phone_no_label;
-	private: System::Windows::Forms::TextBox^ view_detail_panel_phone_no_textbox;
-	private: System::Windows::Forms::Label^ view_detail_panel_age_label;
-	private: System::Windows::Forms::Label^ view_detail_panel_insurance_no_label;
-	private: System::Windows::Forms::Label^ view_detail_panel_id_label;
-	private: System::Windows::Forms::Label^ view_detail_panel_last_name_label;
-	private: System::Windows::Forms::Label^ view_detail_panel_first_name_label;
-	private: System::Windows::Forms::TextBox^ view_detail_panel_last_name_textbox;
-	private: System::Windows::Forms::TextBox^ view_detail_panel_id_textbox;
-	private: System::Windows::Forms::TextBox^ view_detail_panel_insurance_no_textbox;
-	private: System::Windows::Forms::TextBox^ view_detail_panel_age_textbox;
-	private: System::Windows::Forms::TextBox^ view_detail_panel_first_name_textbox;
-	private: System::Windows::Forms::Button^ view_detail_panel_change_button;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	private: System::Windows::Forms::Panel^ complain_panel;
 	private: System::Windows::Forms::Button^ complain_panel_ok_button;
@@ -139,6 +139,26 @@ namespace temp {
 	private: System::Windows::Forms::Button^ doctor_panel_logout_button;
 	private: System::Windows::Forms::Button^ doctor_panel_complain_button;
 	private: System::Windows::Forms::Button^ admin_panel_fire_doctor;
+private: System::Windows::Forms::Panel^ view_detail_panel;
+private: System::Windows::Forms::Button^ view_detail_panel_change_button;
+private: System::Windows::Forms::Button^ view_detail_panel_back_button;
+private: System::Windows::Forms::Label^ view_detail_panel_security_q_label;
+private: System::Windows::Forms::TextBox^ view_detail_security_q_textbox;
+private: System::Windows::Forms::Label^ view_detail_panel_password_label;
+private: System::Windows::Forms::TextBox^ view_detail_panel_password_textbox;
+private: System::Windows::Forms::Label^ view_detail_panel_phone_no_label;
+private: System::Windows::Forms::TextBox^ view_detail_panel_phone_no_textbox;
+private: System::Windows::Forms::Label^ view_detail_panel_age_label;
+private: System::Windows::Forms::Label^ view_detail_panel_insurance_no_label;
+private: System::Windows::Forms::Label^ view_detail_panel_id_label;
+private: System::Windows::Forms::Label^ view_detail_panel_last_name_label;
+private: System::Windows::Forms::Label^ view_detail_panel_first_name_label;
+private: System::Windows::Forms::TextBox^ view_detail_panel_last_name_textbox;
+private: System::Windows::Forms::TextBox^ view_detail_panel_id_textbox;
+private: System::Windows::Forms::TextBox^ view_detail_panel_insurance_no_textbox;
+private: System::Windows::Forms::TextBox^ view_detail_panel_age_textbox;
+private: System::Windows::Forms::TextBox^ view_detail_panel_first_name_textbox;
+
 
 
 
@@ -203,6 +223,23 @@ namespace temp {
 			this->sign_up_age_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->sign_up_first_name_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->complain_panel = (gcnew System::Windows::Forms::Panel());
+			this->complain_panel_back_button = (gcnew System::Windows::Forms::Button());
+			this->complain_panel_ok_button = (gcnew System::Windows::Forms::Button());
+			this->complain_panel_textbox = (gcnew System::Windows::Forms::TextBox());
+			this->main_panel = (gcnew System::Windows::Forms::Panel());
+			this->main_panel_exit_button = (gcnew System::Windows::Forms::Button());
+			this->main_panel_admin_button = (gcnew System::Windows::Forms::Button());
+			this->main_panel_doctor_button = (gcnew System::Windows::Forms::Button());
+			this->main_panel_patient_button = (gcnew System::Windows::Forms::Button());
+			this->admin_panel = (gcnew System::Windows::Forms::Panel());
+			this->admin_panel_fire_doctor = (gcnew System::Windows::Forms::Button());
+			this->admin_panel_logout_button = (gcnew System::Windows::Forms::Button());
+			this->admin_panel_hire_doctor = (gcnew System::Windows::Forms::Button());
+			this->doctor_panel = (gcnew System::Windows::Forms::Panel());
+			this->doctor_panel_complain_button = (gcnew System::Windows::Forms::Button());
+			this->doctor_panel_logout_button = (gcnew System::Windows::Forms::Button());
+			this->doctor_panel_view_detail = (gcnew System::Windows::Forms::Button());
 			this->view_detail_panel = (gcnew System::Windows::Forms::Panel());
 			this->view_detail_panel_change_button = (gcnew System::Windows::Forms::Button());
 			this->view_detail_panel_back_button = (gcnew System::Windows::Forms::Button());
@@ -222,31 +259,14 @@ namespace temp {
 			this->view_detail_panel_insurance_no_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->view_detail_panel_age_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->view_detail_panel_first_name_textbox = (gcnew System::Windows::Forms::TextBox());
-			this->complain_panel = (gcnew System::Windows::Forms::Panel());
-			this->complain_panel_back_button = (gcnew System::Windows::Forms::Button());
-			this->complain_panel_ok_button = (gcnew System::Windows::Forms::Button());
-			this->complain_panel_textbox = (gcnew System::Windows::Forms::TextBox());
-			this->main_panel = (gcnew System::Windows::Forms::Panel());
-			this->main_panel_exit_button = (gcnew System::Windows::Forms::Button());
-			this->main_panel_admin_button = (gcnew System::Windows::Forms::Button());
-			this->main_panel_doctor_button = (gcnew System::Windows::Forms::Button());
-			this->main_panel_patient_button = (gcnew System::Windows::Forms::Button());
-			this->admin_panel = (gcnew System::Windows::Forms::Panel());
-			this->admin_panel_fire_doctor = (gcnew System::Windows::Forms::Button());
-			this->admin_panel_logout_button = (gcnew System::Windows::Forms::Button());
-			this->admin_panel_hire_doctor = (gcnew System::Windows::Forms::Button());
-			this->doctor_panel = (gcnew System::Windows::Forms::Panel());
-			this->doctor_panel_complain_button = (gcnew System::Windows::Forms::Button());
-			this->doctor_panel_logout_button = (gcnew System::Windows::Forms::Button());
-			this->doctor_panel_view_detail = (gcnew System::Windows::Forms::Button());
 			this->login_panel->SuspendLayout();
 			this->forget_password_panel->SuspendLayout();
 			this->signup_panel->SuspendLayout();
-			this->view_detail_panel->SuspendLayout();
 			this->complain_panel->SuspendLayout();
 			this->main_panel->SuspendLayout();
 			this->admin_panel->SuspendLayout();
 			this->doctor_panel->SuspendLayout();
+			this->view_detail_panel->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// login_panel_password_label
@@ -603,6 +623,174 @@ namespace temp {
 			this->label3->Size = System::Drawing::Size(100, 23);
 			this->label3->TabIndex = 0;
 			// 
+			// complain_panel
+			// 
+			this->complain_panel->Controls->Add(this->complain_panel_back_button);
+			this->complain_panel->Controls->Add(this->complain_panel_ok_button);
+			this->complain_panel->Controls->Add(this->complain_panel_textbox);
+			this->complain_panel->Location = System::Drawing::Point(0, 0);
+			this->complain_panel->Name = L"complain_panel";
+			this->complain_panel->Size = System::Drawing::Size(232, 327);
+			this->complain_panel->TabIndex = 12;
+			// 
+			// complain_panel_back_button
+			// 
+			this->complain_panel_back_button->Location = System::Drawing::Point(38, 256);
+			this->complain_panel_back_button->Name = L"complain_panel_back_button";
+			this->complain_panel_back_button->Size = System::Drawing::Size(122, 42);
+			this->complain_panel_back_button->TabIndex = 23;
+			this->complain_panel_back_button->Text = L"Back";
+			this->complain_panel_back_button->UseVisualStyleBackColor = true;
+			this->complain_panel_back_button->Click += gcnew System::EventHandler(this, &MyForm::complain_panel_back_button_Click);
+			// 
+			// complain_panel_ok_button
+			// 
+			this->complain_panel_ok_button->Location = System::Drawing::Point(38, 191);
+			this->complain_panel_ok_button->Name = L"complain_panel_ok_button";
+			this->complain_panel_ok_button->Size = System::Drawing::Size(122, 42);
+			this->complain_panel_ok_button->TabIndex = 22;
+			this->complain_panel_ok_button->Text = L"Ok";
+			this->complain_panel_ok_button->UseVisualStyleBackColor = true;
+			this->complain_panel_ok_button->Click += gcnew System::EventHandler(this, &MyForm::complain_panel_ok_button_Click);
+			// 
+			// complain_panel_textbox
+			// 
+			this->complain_panel_textbox->Location = System::Drawing::Point(38, 33);
+			this->complain_panel_textbox->Name = L"complain_panel_textbox";
+			this->complain_panel_textbox->Size = System::Drawing::Size(142, 29);
+			this->complain_panel_textbox->TabIndex = 21;
+			// 
+			// main_panel
+			// 
+			this->main_panel->Controls->Add(this->main_panel_exit_button);
+			this->main_panel->Controls->Add(this->main_panel_admin_button);
+			this->main_panel->Controls->Add(this->main_panel_doctor_button);
+			this->main_panel->Controls->Add(this->main_panel_patient_button);
+			this->main_panel->Location = System::Drawing::Point(0, 0);
+			this->main_panel->Name = L"main_panel";
+			this->main_panel->Size = System::Drawing::Size(420, 450);
+			this->main_panel->TabIndex = 13;
+			// 
+			// main_panel_exit_button
+			// 
+			this->main_panel_exit_button->Location = System::Drawing::Point(151, 347);
+			this->main_panel_exit_button->Name = L"main_panel_exit_button";
+			this->main_panel_exit_button->Size = System::Drawing::Size(122, 42);
+			this->main_panel_exit_button->TabIndex = 11;
+			this->main_panel_exit_button->Text = L"Exit";
+			this->main_panel_exit_button->UseVisualStyleBackColor = true;
+			this->main_panel_exit_button->Click += gcnew System::EventHandler(this, &MyForm::main_panel_exit_button_Click);
+			// 
+			// main_panel_admin_button
+			// 
+			this->main_panel_admin_button->Location = System::Drawing::Point(117, 271);
+			this->main_panel_admin_button->Name = L"main_panel_admin_button";
+			this->main_panel_admin_button->Size = System::Drawing::Size(187, 42);
+			this->main_panel_admin_button->TabIndex = 10;
+			this->main_panel_admin_button->Text = L"Login as admin";
+			this->main_panel_admin_button->UseVisualStyleBackColor = true;
+			this->main_panel_admin_button->Click += gcnew System::EventHandler(this, &MyForm::main_panel_admin_button_Click);
+			// 
+			// main_panel_doctor_button
+			// 
+			this->main_panel_doctor_button->Location = System::Drawing::Point(117, 204);
+			this->main_panel_doctor_button->Name = L"main_panel_doctor_button";
+			this->main_panel_doctor_button->Size = System::Drawing::Size(187, 42);
+			this->main_panel_doctor_button->TabIndex = 9;
+			this->main_panel_doctor_button->Text = L"Login as doctor";
+			this->main_panel_doctor_button->UseVisualStyleBackColor = true;
+			this->main_panel_doctor_button->Click += gcnew System::EventHandler(this, &MyForm::main_panel_doctor_button_Click);
+			// 
+			// main_panel_patient_button
+			// 
+			this->main_panel_patient_button->Location = System::Drawing::Point(115, 132);
+			this->main_panel_patient_button->Name = L"main_panel_patient_button";
+			this->main_panel_patient_button->Size = System::Drawing::Size(187, 42);
+			this->main_panel_patient_button->TabIndex = 8;
+			this->main_panel_patient_button->Text = L"Login as patient";
+			this->main_panel_patient_button->UseVisualStyleBackColor = true;
+			this->main_panel_patient_button->Click += gcnew System::EventHandler(this, &MyForm::main_panel_patient_button_Click);
+			// 
+			// admin_panel
+			// 
+			this->admin_panel->Controls->Add(this->admin_panel_fire_doctor);
+			this->admin_panel->Controls->Add(this->admin_panel_logout_button);
+			this->admin_panel->Controls->Add(this->admin_panel_hire_doctor);
+			this->admin_panel->Location = System::Drawing::Point(2, 458);
+			this->admin_panel->Name = L"admin_panel";
+			this->admin_panel->Size = System::Drawing::Size(420, 450);
+			this->admin_panel->TabIndex = 14;
+			// 
+			// admin_panel_fire_doctor
+			// 
+			this->admin_panel_fire_doctor->Location = System::Drawing::Point(15, 97);
+			this->admin_panel_fire_doctor->Name = L"admin_panel_fire_doctor";
+			this->admin_panel_fire_doctor->Size = System::Drawing::Size(122, 42);
+			this->admin_panel_fire_doctor->TabIndex = 14;
+			this->admin_panel_fire_doctor->Text = L"Fire Doctor";
+			this->admin_panel_fire_doctor->UseVisualStyleBackColor = true;
+			this->admin_panel_fire_doctor->Click += gcnew System::EventHandler(this, &MyForm::admin_panel_fire_doctor_Click);
+			// 
+			// admin_panel_logout_button
+			// 
+			this->admin_panel_logout_button->Location = System::Drawing::Point(295, 5);
+			this->admin_panel_logout_button->Name = L"admin_panel_logout_button";
+			this->admin_panel_logout_button->Size = System::Drawing::Size(122, 42);
+			this->admin_panel_logout_button->TabIndex = 13;
+			this->admin_panel_logout_button->Text = L"Logout";
+			this->admin_panel_logout_button->UseVisualStyleBackColor = true;
+			this->admin_panel_logout_button->Click += gcnew System::EventHandler(this, &MyForm::admin_panel_logout_button_Click);
+			// 
+			// admin_panel_hire_doctor
+			// 
+			this->admin_panel_hire_doctor->Location = System::Drawing::Point(15, 16);
+			this->admin_panel_hire_doctor->Name = L"admin_panel_hire_doctor";
+			this->admin_panel_hire_doctor->Size = System::Drawing::Size(122, 42);
+			this->admin_panel_hire_doctor->TabIndex = 12;
+			this->admin_panel_hire_doctor->Text = L"Hire Doctor";
+			this->admin_panel_hire_doctor->UseVisualStyleBackColor = true;
+		//	this->admin_panel_hire_doctor->Click += gcnew System::EventHandler(this, &MyForm::admin_panel_hire_doctor_Click);
+			// 
+			// doctor_panel
+			// 
+			this->doctor_panel->Controls->Add(this->doctor_panel_complain_button);
+			this->doctor_panel->Controls->Add(this->doctor_panel_logout_button);
+			this->doctor_panel->Controls->Add(this->doctor_panel_view_detail);
+			this->doctor_panel->Location = System::Drawing::Point(846, 0);
+			this->doctor_panel->Name = L"doctor_panel";
+			this->doctor_panel->Size = System::Drawing::Size(420, 450);
+			this->doctor_panel->TabIndex = 15;
+			// 
+			// doctor_panel_complain_button
+			// 
+			this->doctor_panel_complain_button->Location = System::Drawing::Point(26, 84);
+			this->doctor_panel_complain_button->Name = L"doctor_panel_complain_button";
+			this->doctor_panel_complain_button->Size = System::Drawing::Size(122, 42);
+			this->doctor_panel_complain_button->TabIndex = 15;
+			this->doctor_panel_complain_button->Text = L"Complain";
+			this->doctor_panel_complain_button->UseVisualStyleBackColor = true;
+			//this->doctor_panel_complain_button->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// doctor_panel_logout_button
+			// 
+			this->doctor_panel_logout_button->Location = System::Drawing::Point(273, 17);
+			this->doctor_panel_logout_button->Name = L"doctor_panel_logout_button";
+			this->doctor_panel_logout_button->Size = System::Drawing::Size(122, 42);
+			this->doctor_panel_logout_button->TabIndex = 14;
+			this->doctor_panel_logout_button->Text = L"Logout";
+			this->doctor_panel_logout_button->UseVisualStyleBackColor = true;
+			//this->doctor_panel_logout_button->Click += gcnew System::EventHandler(this, &MyForm::doctor_panel_logout_button_Click);
+			// 
+			// doctor_panel_view_detail
+			// 
+			this->doctor_panel_view_detail->Location = System::Drawing::Point(26, 16);
+			this->doctor_panel_view_detail->Name = L"doctor_panel_view_detail";
+			this->doctor_panel_view_detail->Size = System::Drawing::Size(122, 42);
+			this->doctor_panel_view_detail->TabIndex = 13;
+			this->doctor_panel_view_detail->Text = L"view detail";
+			this->doctor_panel_view_detail->UseVisualStyleBackColor = true;
+			//this->doctor_panel_view_detail->Click += gcnew System::EventHandler(this, &MyForm::doctor_panel_view_detail_Click);
+			// 
 			// view_detail_panel
 			// 
 			this->view_detail_panel->Controls->Add(this->view_detail_panel_change_button);
@@ -623,10 +811,10 @@ namespace temp {
 			this->view_detail_panel->Controls->Add(this->view_detail_panel_insurance_no_textbox);
 			this->view_detail_panel->Controls->Add(this->view_detail_panel_age_textbox);
 			this->view_detail_panel->Controls->Add(this->view_detail_panel_first_name_textbox);
-			this->view_detail_panel->Location = System::Drawing::Point(420, 0);
+			this->view_detail_panel->Location = System::Drawing::Point(441, 149);
 			this->view_detail_panel->Name = L"view_detail_panel";
 			this->view_detail_panel->Size = System::Drawing::Size(420, 450);
-			this->view_detail_panel->TabIndex = 11;
+			this->view_detail_panel->TabIndex = 28;
 			// 
 			// view_detail_panel_change_button
 			// 
@@ -636,7 +824,7 @@ namespace temp {
 			this->view_detail_panel_change_button->TabIndex = 40;
 			this->view_detail_panel_change_button->Text = L"Change";
 			this->view_detail_panel_change_button->UseVisualStyleBackColor = true;
-			this->view_detail_panel_change_button->Click += gcnew System::EventHandler(this, &MyForm::view_detail_panel_change_button_Click);
+			this->view_detail_panel_change_button->Click += gcnew System::EventHandler(this, &MyForm::view_detail_panel_change_button_Click_1);
 			// 
 			// view_detail_panel_back_button
 			// 
@@ -646,7 +834,6 @@ namespace temp {
 			this->view_detail_panel_back_button->TabIndex = 39;
 			this->view_detail_panel_back_button->Text = L"Back";
 			this->view_detail_panel_back_button->UseVisualStyleBackColor = true;
-			this->view_detail_panel_back_button->Click += gcnew System::EventHandler(this, &MyForm::view_detail_panel_back_button_Click);
 			// 
 			// view_detail_panel_security_q_label
 			// 
@@ -777,183 +964,15 @@ namespace temp {
 			this->view_detail_panel_first_name_textbox->Size = System::Drawing::Size(142, 29);
 			this->view_detail_panel_first_name_textbox->TabIndex = 20;
 			// 
-			// complain_panel
-			// 
-			this->complain_panel->Controls->Add(this->complain_panel_back_button);
-			this->complain_panel->Controls->Add(this->complain_panel_ok_button);
-			this->complain_panel->Controls->Add(this->complain_panel_textbox);
-			this->complain_panel->Location = System::Drawing::Point(0, 0);
-			this->complain_panel->Name = L"complain_panel";
-			this->complain_panel->Size = System::Drawing::Size(232, 327);
-			this->complain_panel->TabIndex = 12;
-			// 
-			// complain_panel_back_button
-			// 
-			this->complain_panel_back_button->Location = System::Drawing::Point(38, 256);
-			this->complain_panel_back_button->Name = L"complain_panel_back_button";
-			this->complain_panel_back_button->Size = System::Drawing::Size(122, 42);
-			this->complain_panel_back_button->TabIndex = 23;
-			this->complain_panel_back_button->Text = L"Back";
-			this->complain_panel_back_button->UseVisualStyleBackColor = true;
-			this->complain_panel_back_button->Click += gcnew System::EventHandler(this, &MyForm::complain_panel_back_button_Click);
-			// 
-			// complain_panel_ok_button
-			// 
-			this->complain_panel_ok_button->Location = System::Drawing::Point(38, 191);
-			this->complain_panel_ok_button->Name = L"complain_panel_ok_button";
-			this->complain_panel_ok_button->Size = System::Drawing::Size(122, 42);
-			this->complain_panel_ok_button->TabIndex = 22;
-			this->complain_panel_ok_button->Text = L"Ok";
-			this->complain_panel_ok_button->UseVisualStyleBackColor = true;
-			this->complain_panel_ok_button->Click += gcnew System::EventHandler(this, &MyForm::complain_panel_ok_button_Click);
-			// 
-			// complain_panel_textbox
-			// 
-			this->complain_panel_textbox->Location = System::Drawing::Point(38, 33);
-			this->complain_panel_textbox->Name = L"complain_panel_textbox";
-			this->complain_panel_textbox->Size = System::Drawing::Size(142, 29);
-			this->complain_panel_textbox->TabIndex = 21;
-			// 
-			// main_panel
-			// 
-			this->main_panel->Controls->Add(this->main_panel_exit_button);
-			this->main_panel->Controls->Add(this->main_panel_admin_button);
-			this->main_panel->Controls->Add(this->main_panel_doctor_button);
-			this->main_panel->Controls->Add(this->main_panel_patient_button);
-			this->main_panel->Location = System::Drawing::Point(0, 0);
-			this->main_panel->Name = L"main_panel";
-			this->main_panel->Size = System::Drawing::Size(420, 450);
-			this->main_panel->TabIndex = 13;
-			// 
-			// main_panel_exit_button
-			// 
-			this->main_panel_exit_button->Location = System::Drawing::Point(151, 347);
-			this->main_panel_exit_button->Name = L"main_panel_exit_button";
-			this->main_panel_exit_button->Size = System::Drawing::Size(122, 42);
-			this->main_panel_exit_button->TabIndex = 11;
-			this->main_panel_exit_button->Text = L"Exit";
-			this->main_panel_exit_button->UseVisualStyleBackColor = true;
-			this->main_panel_exit_button->Click += gcnew System::EventHandler(this, &MyForm::main_panel_exit_button_Click);
-			// 
-			// main_panel_admin_button
-			// 
-			this->main_panel_admin_button->Location = System::Drawing::Point(117, 271);
-			this->main_panel_admin_button->Name = L"main_panel_admin_button";
-			this->main_panel_admin_button->Size = System::Drawing::Size(187, 42);
-			this->main_panel_admin_button->TabIndex = 10;
-			this->main_panel_admin_button->Text = L"Login as admin";
-			this->main_panel_admin_button->UseVisualStyleBackColor = true;
-			this->main_panel_admin_button->Click += gcnew System::EventHandler(this, &MyForm::main_panel_admin_button_Click);
-			// 
-			// main_panel_doctor_button
-			// 
-			this->main_panel_doctor_button->Location = System::Drawing::Point(117, 204);
-			this->main_panel_doctor_button->Name = L"main_panel_doctor_button";
-			this->main_panel_doctor_button->Size = System::Drawing::Size(187, 42);
-			this->main_panel_doctor_button->TabIndex = 9;
-			this->main_panel_doctor_button->Text = L"Login as doctor";
-			this->main_panel_doctor_button->UseVisualStyleBackColor = true;
-			this->main_panel_doctor_button->Click += gcnew System::EventHandler(this, &MyForm::main_panel_doctor_button_Click);
-			// 
-			// main_panel_patient_button
-			// 
-			this->main_panel_patient_button->Location = System::Drawing::Point(115, 132);
-			this->main_panel_patient_button->Name = L"main_panel_patient_button";
-			this->main_panel_patient_button->Size = System::Drawing::Size(187, 42);
-			this->main_panel_patient_button->TabIndex = 8;
-			this->main_panel_patient_button->Text = L"Login as patient";
-			this->main_panel_patient_button->UseVisualStyleBackColor = true;
-			this->main_panel_patient_button->Click += gcnew System::EventHandler(this, &MyForm::main_panel_patient_button_Click);
-			// 
-			// admin_panel
-			// 
-			this->admin_panel->Controls->Add(this->admin_panel_fire_doctor);
-			this->admin_panel->Controls->Add(this->admin_panel_logout_button);
-			this->admin_panel->Controls->Add(this->admin_panel_hire_doctor);
-			this->admin_panel->Location = System::Drawing::Point(2, 458);
-			this->admin_panel->Name = L"admin_panel";
-			this->admin_panel->Size = System::Drawing::Size(420, 450);
-			this->admin_panel->TabIndex = 14;
-			// 
-			// admin_panel_fire_doctor
-			// 
-			this->admin_panel_fire_doctor->Location = System::Drawing::Point(15, 97);
-			this->admin_panel_fire_doctor->Name = L"admin_panel_fire_doctor";
-			this->admin_panel_fire_doctor->Size = System::Drawing::Size(122, 42);
-			this->admin_panel_fire_doctor->TabIndex = 14;
-			this->admin_panel_fire_doctor->Text = L"Fire Doctor";
-			this->admin_panel_fire_doctor->UseVisualStyleBackColor = true;
-			this->admin_panel_fire_doctor->Click += gcnew System::EventHandler(this, &MyForm::admin_panel_fire_doctor_Click);
-			// 
-			// admin_panel_logout_button
-			// 
-			this->admin_panel_logout_button->Location = System::Drawing::Point(295, 5);
-			this->admin_panel_logout_button->Name = L"admin_panel_logout_button";
-			this->admin_panel_logout_button->Size = System::Drawing::Size(122, 42);
-			this->admin_panel_logout_button->TabIndex = 13;
-			this->admin_panel_logout_button->Text = L"Logout";
-			this->admin_panel_logout_button->UseVisualStyleBackColor = true;
-			this->admin_panel_logout_button->Click += gcnew System::EventHandler(this, &MyForm::admin_panel_logout_button_Click);
-			// 
-			// admin_panel_hire_doctor
-			// 
-			this->admin_panel_hire_doctor->Location = System::Drawing::Point(15, 16);
-			this->admin_panel_hire_doctor->Name = L"admin_panel_hire_doctor";
-			this->admin_panel_hire_doctor->Size = System::Drawing::Size(122, 42);
-			this->admin_panel_hire_doctor->TabIndex = 12;
-			this->admin_panel_hire_doctor->Text = L"Hire Doctor";
-			this->admin_panel_hire_doctor->UseVisualStyleBackColor = true;
-			this->admin_panel_hire_doctor->Click += gcnew System::EventHandler(this, &MyForm::admin_panel_hire_doctor_Click);
-			// 
-			// doctor_panel
-			// 
-			this->doctor_panel->Controls->Add(this->doctor_panel_complain_button);
-			this->doctor_panel->Controls->Add(this->doctor_panel_logout_button);
-			this->doctor_panel->Controls->Add(this->doctor_panel_view_detail);
-			this->doctor_panel->Location = System::Drawing::Point(846, 0);
-			this->doctor_panel->Name = L"doctor_panel";
-			this->doctor_panel->Size = System::Drawing::Size(420, 450);
-			this->doctor_panel->TabIndex = 15;
-			// 
-			// doctor_panel_complain_button
-			// 
-			this->doctor_panel_complain_button->Location = System::Drawing::Point(26, 84);
-			this->doctor_panel_complain_button->Name = L"doctor_panel_complain_button";
-			this->doctor_panel_complain_button->Size = System::Drawing::Size(122, 42);
-			this->doctor_panel_complain_button->TabIndex = 15;
-			this->doctor_panel_complain_button->Text = L"Complain";
-			this->doctor_panel_complain_button->UseVisualStyleBackColor = true;
-			this->doctor_panel_complain_button->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
-			// 
-			// doctor_panel_logout_button
-			// 
-			this->doctor_panel_logout_button->Location = System::Drawing::Point(273, 17);
-			this->doctor_panel_logout_button->Name = L"doctor_panel_logout_button";
-			this->doctor_panel_logout_button->Size = System::Drawing::Size(122, 42);
-			this->doctor_panel_logout_button->TabIndex = 14;
-			this->doctor_panel_logout_button->Text = L"Logout";
-			this->doctor_panel_logout_button->UseVisualStyleBackColor = true;
-			this->doctor_panel_logout_button->Click += gcnew System::EventHandler(this, &MyForm::doctor_panel_logout_button_Click);
-			// 
-			// doctor_panel_view_detail
-			// 
-			this->doctor_panel_view_detail->Location = System::Drawing::Point(26, 16);
-			this->doctor_panel_view_detail->Name = L"doctor_panel_view_detail";
-			this->doctor_panel_view_detail->Size = System::Drawing::Size(122, 42);
-			this->doctor_panel_view_detail->TabIndex = 13;
-			this->doctor_panel_view_detail->Text = L"view detail";
-			this->doctor_panel_view_detail->UseVisualStyleBackColor = true;
-			this->doctor_panel_view_detail->Click += gcnew System::EventHandler(this, &MyForm::doctor_panel_view_detail_Click);
-			// 
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1302, 749);
+			this->Controls->Add(this->view_detail_panel);
 			this->Controls->Add(this->complain_panel);
 			this->Controls->Add(this->doctor_panel);
 			this->Controls->Add(this->admin_panel);
 			this->Controls->Add(this->main_panel);
-			this->Controls->Add(this->view_detail_panel);
 			this->Controls->Add(this->forget_password_panel);
 			this->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -966,13 +985,13 @@ namespace temp {
 			this->forget_password_panel->PerformLayout();
 			this->signup_panel->ResumeLayout(false);
 			this->signup_panel->PerformLayout();
-			this->view_detail_panel->ResumeLayout(false);
-			this->view_detail_panel->PerformLayout();
 			this->complain_panel->ResumeLayout(false);
 			this->complain_panel->PerformLayout();
 			this->main_panel->ResumeLayout(false);
 			this->admin_panel->ResumeLayout(false);
 			this->doctor_panel->ResumeLayout(false);
+			this->view_detail_panel->ResumeLayout(false);
+			this->view_detail_panel->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -998,7 +1017,7 @@ namespace temp {
 					//patient_panel->Visible = true; // hide the panel
 					
 					MyForm::Hide();
-					Patient_Form^ P = gcnew Patient_Form();
+					Patient_Form^ P = gcnew Patient_Form(userp);
 					P->Show();
 				}
 			}
@@ -1011,7 +1030,7 @@ namespace temp {
 					//doctor_panel->Visible = true; // hide the panel
 
 					this->Hide();
-					Doctor_Form^ P = gcnew Doctor_Form();
+					Doctor_Form^ P = gcnew Doctor_Form(userd);
 					P->Show();
 					login_panel_signup_button->Visible = true;
 				}
@@ -1105,24 +1124,24 @@ namespace temp {
 			ismain_panel_patient_button = false;
 			login_panel_signup_button->Visible = true;
 		}
-		private: System::Void patient_panel_logout_button_Click(System::Object^ sender, System::EventArgs^ e) 
-		{
-			login_panel->Visible = true; // show the panel
-			//patient_panel->Visible = false; // hide the panel
-		}
-		private: System::Void patient_panel_view_detail_button_Click(System::Object^ sender, System::EventArgs^ e) 
-		{
-			view_detail_panel->Visible = true; // show the panel
-			//patient_panel->Visible = false; // hide the panel
-			view_detail_panel_first_name_textbox->Text = userp->first_name;
-			view_detail_panel_last_name_textbox->Text = userp->last_name;
-			view_detail_panel_id_textbox->Text = userp->id;
-			view_detail_panel_insurance_no_textbox->Text = userp->insurance_no;
-			view_detail_panel_age_textbox->Text = userp->age;
-			view_detail_panel_phone_no_textbox->Text = userp->phone_no;
-			view_detail_panel_password_textbox->Text = userp->password;
-			view_detail_security_q_textbox->Text = userp->security_q;
-		}
+		//private: System::Void patient_panel_logout_button_Click(System::Object^ sender, System::EventArgs^ e) 
+		//{
+		//	login_panel->Visible = true; // show the panel
+		//	//patient_panel->Visible = false; // hide the panel
+		//}
+		//private: System::Void patient_panel_view_detail_button_Click(System::Object^ sender, System::EventArgs^ e) 
+		//{
+		//	view_detail_panel->Visible = true; // show the panel
+		//	//patient_panel->Visible = false; // hide the panel
+		//	view_detail_panel_first_name_textbox->Text = userp->first_name;
+		//	view_detail_panel_last_name_textbox->Text = userp->last_name;
+		//	view_detail_panel_id_textbox->Text = userp->id;
+		//	view_detail_panel_insurance_no_textbox->Text = userp->insurance_no;
+		//	view_detail_panel_age_textbox->Text = userp->age;
+		//	view_detail_panel_phone_no_textbox->Text = userp->phone_no;
+		//	view_detail_panel_password_textbox->Text = userp->password;
+		//	view_detail_security_q_textbox->Text = userp->security_q;
+		//}
 		private: System::Void view_detail_panel_back_button_Click(System::Object^ sender, System::EventArgs^ e) 
 		{
 			this->view_detail_panel_insurance_no_label->Text = L"insurance no";
@@ -1176,11 +1195,11 @@ namespace temp {
 				userd->hiredoctor(id, p, f, l, in, a, ph, se, con);
 			}
 		}
-		private: System::Void patient_panel_complaint_button_Click(System::Object^ sender, System::EventArgs^ e)
-		{
-			complain_panel->Visible = true; // show the panel
-			//patient_panel->Visible = false; // hide the panel
-		}
+		//private: System::Void patient_panel_complaint_button_Click(System::Object^ sender, System::EventArgs^ e)
+		//{
+		//	complain_panel->Visible = true; // show the panel
+		//	//patient_panel->Visible = false; // hide the panel
+		//}
 		private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		}
 		private: System::Void complain_panel_ok_button_Click(System::Object^ sender, System::EventArgs^ e)
@@ -1241,35 +1260,35 @@ namespace temp {
 			view_detail_panel_change_button->Text = L"Hire";
 			view_detail_panel_id_textbox->Enabled=true;
 		}
-		private: System::Void doctor_panel_logout_button_Click(System::Object^ sender, System::EventArgs^ e) 
-		{
-			login_panel->Visible = true; // show the panel
-			doctor_panel->Visible = false; // hide the panel
-		}
+		//private: System::Void doctor_panel_logout_button_Click(System::Object^ sender, System::EventArgs^ e) 
+		//{
+		//	login_panel->Visible = true; // show the panel
+		//	doctor_panel->Visible = false; // hide the panel
+		//}
 		private: System::Void admin_panel_logout_button_Click(System::Object^ sender, System::EventArgs^ e) 
 		{
 			login_panel->Visible = true; // show the panel
 			admin_panel->Visible = false; // hide the panel
 		}
-		private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
-		{
-			complain_panel->Visible = true; // show the panel
-			doctor_panel->Visible = false; // hide the panel
-		}
-		private: System::Void doctor_panel_view_detail_Click(System::Object^ sender, System::EventArgs^ e)
-		{
-			view_detail_panel->Visible = true; // show the panel
-			doctor_panel->Visible = false; // hide the panel
-			this->view_detail_panel_insurance_no_label->Text = L"specialization";
-			view_detail_panel_first_name_textbox->Text = userd->first_name;
-			view_detail_panel_last_name_textbox->Text = userd->last_name;
-			view_detail_panel_id_textbox->Text = userd->id;
-			view_detail_panel_insurance_no_textbox->Text = userd->specialization;
-			view_detail_panel_age_textbox->Text = userd->age;
-			view_detail_panel_phone_no_textbox->Text = userd->phone_no;
-			view_detail_panel_password_textbox->Text = userd->password;
-			view_detail_security_q_textbox->Text = userd->security_q;
-		}
+		//private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
+		//{
+		//	complain_panel->Visible = true; // show the panel
+		//	doctor_panel->Visible = false; // hide the panel
+		//}
+		//private: System::Void doctor_panel_view_detail_Click(System::Object^ sender, System::EventArgs^ e)
+		//{
+		//	view_detail_panel->Visible = true; // show the panel
+		//	doctor_panel->Visible = false; // hide the panel
+		//	this->view_detail_panel_insurance_no_label->Text = L"specialization";
+		//	view_detail_panel_first_name_textbox->Text = userd->first_name;
+		//	view_detail_panel_last_name_textbox->Text = userd->last_name;
+		//	view_detail_panel_id_textbox->Text = userd->id;
+		//	view_detail_panel_insurance_no_textbox->Text = userd->specialization;
+		//	view_detail_panel_age_textbox->Text = userd->age;
+		//	view_detail_panel_phone_no_textbox->Text = userd->phone_no;
+		//	view_detail_panel_password_textbox->Text = userd->password;
+		//	view_detail_security_q_textbox->Text = userd->security_q;
+		//}
 		private: System::Void admin_panel_fire_doctor_Click(System::Object^ sender, System::EventArgs^ e)
 		{
 			complain_panel->Visible = true;
@@ -1388,5 +1407,25 @@ namespace temp {
 		}
 
 		*/
-	};
+	private: System::Void view_detail_panel_change_button_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	String^ complain;
+	try
+	{
+		String^ connString = rr;
+		SqlConnection sqlConn(connString);
+		sqlConn.Open();
+		String^ sqlQuery = "SELECT * FROM complain";
+		SqlCommand command(sqlQuery, % sqlConn);
+		SqlDataReader^ reader = command.ExecuteReader();
+		MessageBox::Show(reader[0]->ToString(), "Complaints", MessageBoxButtons::OK);
+	}
+	catch (Exception^ ex)
+	{
+		MessageBox::Show("Exception", "exception", MessageBoxButtons::OK);
+	}
+
+}
+};
 }

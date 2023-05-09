@@ -147,6 +147,12 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Admin_Form.resx">
+      <DependentUpon>Admin_Form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor_Form.resx">
+      <DependentUpon>Doctor_Form.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
