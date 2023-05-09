@@ -472,7 +472,7 @@ private: System::Void complain_panel_ok_button_Click(System::Object^ sender, Sys
 		String^ connectionString = rr;
 
 		// SQL query to retrieve data from the table
-		String^ query = "SELECT complain FROM YourTable";
+		String^ query = "SELECT complain FROM complain";
 
 		// Create the SqlConnection and SqlCommand objects
 		SqlConnection^ connection = gcnew SqlConnection(connectionString);
