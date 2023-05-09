@@ -2,6 +2,11 @@
 #include"patient.h"
 #include"doctor.h"
 #include"admin.h"
+
+#include "Doctor_Form.h"
+#include "Admin_Form.h"
+#include "Patient_Form.h"
+
 using namespace System::Data::SqlClient;
 namespace temp {
 
@@ -17,7 +22,9 @@ namespace temp {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
-		String^ rr = "Data Source=DESKTOP-9T5F2B3;Initial Catalog=mono;Integrated Security=True";
+		//String^ rr = "Data Source=DESKTOP-9T5F2B3;Initial Catalog=mono;Integrated Security=True";
+		String^ rr = "Data Source=localhost\\sqlexpress;Initial Catalog=newmono;Integrated Security=True";
+
 	public:
 		MyForm(void)
 		{
@@ -30,13 +37,13 @@ namespace temp {
 			forget_password_panel->Visible = false;
 			admin_panel->Visible = false;
 			doctor_panel->Visible = false;
-			patient_panel->Visible = false;
+			//patient_panel->Visible = false;
 			view_detail_panel->Visible = false;
 			complain_panel->Visible = false;
 			main_panel ->Visible= true;
 			login_panel->Visible = false;
-			make_appointment_panel->Visible = false;
-			cancel_appointment_panel->Visible = false;
+			//make_appointment_panel->Visible = false;
+			//cancel_appointment_panel->Visible = false;
 			//TODO: Add the constructor code here
 			//
 		}
@@ -91,10 +98,10 @@ namespace temp {
 	private: System::Windows::Forms::TextBox^ forget_password_panel_security_q_textbox;
 	private: System::Windows::Forms::TextBox^ forget_password_panel_id_textbox;
 	private: System::Windows::Forms::Button^ login_panel_back_button;
-	private: System::Windows::Forms::Panel^ patient_panel;
+
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Button^ patient_panel_logout_button;
-	private: System::Windows::Forms::Button^ patient_panel_view_detail_button;
+
+
 	private: System::Windows::Forms::Panel^ view_detail_panel;
 	private: System::Windows::Forms::Button^ view_detail_panel_back_button;
 	private: System::Windows::Forms::Label^ view_detail_panel_security_q_label;
@@ -114,7 +121,7 @@ namespace temp {
 	private: System::Windows::Forms::TextBox^ view_detail_panel_age_textbox;
 	private: System::Windows::Forms::TextBox^ view_detail_panel_first_name_textbox;
 	private: System::Windows::Forms::Button^ view_detail_panel_change_button;
-	private: System::Windows::Forms::Button^ patient_panel_complaint_button;
+
 	private: System::Windows::Forms::Panel^ complain_panel;
 	private: System::Windows::Forms::Button^ complain_panel_ok_button;
 	private: System::Windows::Forms::TextBox^ complain_panel_textbox;
@@ -132,17 +139,17 @@ namespace temp {
 	private: System::Windows::Forms::Button^ doctor_panel_logout_button;
 	private: System::Windows::Forms::Button^ doctor_panel_complain_button;
 	private: System::Windows::Forms::Button^ admin_panel_fire_doctor;
-	private: System::Windows::Forms::Button^ patient_panel_make_appointment_button;
-	private: System::Windows::Forms::Panel^ make_appointment_panel;
-	private: System::Windows::Forms::Button^ make_appointment_back_button;
-	private: System::Windows::Forms::Button^ make_appointment_ok_button;
-	private: System::Windows::Forms::ComboBox^ make_appointment_panel_combo_box;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
-	private: System::Windows::Forms::Button^ patient_panel_cancel_button;
-	private: System::Windows::Forms::Panel^ cancel_appointment_panel;
-	private: System::Windows::Forms::Button^ cancel_appointment_back_button;
-	private: System::Windows::Forms::Button^ cancel_appointment_ok_button;
-	private: System::Windows::Forms::ComboBox^ cancelappointment_combobox;
+
+
+
+
+
+
+
+
+
+
+
 
 
 	private:
@@ -195,12 +202,6 @@ namespace temp {
 			this->sign_up_insuranc_no_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->sign_up_age_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->sign_up_first_name_textbox = (gcnew System::Windows::Forms::TextBox());
-			this->patient_panel = (gcnew System::Windows::Forms::Panel());
-			this->patient_panel_cancel_button = (gcnew System::Windows::Forms::Button());
-			this->patient_panel_make_appointment_button = (gcnew System::Windows::Forms::Button());
-			this->patient_panel_complaint_button = (gcnew System::Windows::Forms::Button());
-			this->patient_panel_view_detail_button = (gcnew System::Windows::Forms::Button());
-			this->patient_panel_logout_button = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->view_detail_panel = (gcnew System::Windows::Forms::Panel());
 			this->view_detail_panel_change_button = (gcnew System::Windows::Forms::Button());
@@ -238,26 +239,14 @@ namespace temp {
 			this->doctor_panel_complain_button = (gcnew System::Windows::Forms::Button());
 			this->doctor_panel_logout_button = (gcnew System::Windows::Forms::Button());
 			this->doctor_panel_view_detail = (gcnew System::Windows::Forms::Button());
-			this->make_appointment_panel = (gcnew System::Windows::Forms::Panel());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->make_appointment_back_button = (gcnew System::Windows::Forms::Button());
-			this->make_appointment_ok_button = (gcnew System::Windows::Forms::Button());
-			this->make_appointment_panel_combo_box = (gcnew System::Windows::Forms::ComboBox());
-			this->cancel_appointment_panel = (gcnew System::Windows::Forms::Panel());
-			this->cancel_appointment_back_button = (gcnew System::Windows::Forms::Button());
-			this->cancel_appointment_ok_button = (gcnew System::Windows::Forms::Button());
-			this->cancelappointment_combobox = (gcnew System::Windows::Forms::ComboBox());
 			this->login_panel->SuspendLayout();
 			this->forget_password_panel->SuspendLayout();
 			this->signup_panel->SuspendLayout();
-			this->patient_panel->SuspendLayout();
 			this->view_detail_panel->SuspendLayout();
 			this->complain_panel->SuspendLayout();
 			this->main_panel->SuspendLayout();
 			this->admin_panel->SuspendLayout();
 			this->doctor_panel->SuspendLayout();
-			this->make_appointment_panel->SuspendLayout();
-			this->cancel_appointment_panel->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// login_panel_password_label
@@ -606,68 +595,6 @@ namespace temp {
 			this->sign_up_first_name_textbox->Name = L"sign_up_first_name_textbox";
 			this->sign_up_first_name_textbox->Size = System::Drawing::Size(142, 20);
 			this->sign_up_first_name_textbox->TabIndex = 0;
-			// 
-			// patient_panel
-			// 
-			this->patient_panel->Controls->Add(this->patient_panel_cancel_button);
-			this->patient_panel->Controls->Add(this->patient_panel_make_appointment_button);
-			this->patient_panel->Controls->Add(this->patient_panel_complaint_button);
-			this->patient_panel->Controls->Add(this->patient_panel_view_detail_button);
-			this->patient_panel->Controls->Add(this->patient_panel_logout_button);
-			this->patient_panel->Location = System::Drawing::Point(428, 463);
-			this->patient_panel->Name = L"patient_panel";
-			this->patient_panel->Size = System::Drawing::Size(420, 450);
-			this->patient_panel->TabIndex = 9;
-			// 
-			// patient_panel_cancel_button
-			// 
-			this->patient_panel_cancel_button->Location = System::Drawing::Point(15, 205);
-			this->patient_panel_cancel_button->Name = L"patient_panel_cancel_button";
-			this->patient_panel_cancel_button->Size = System::Drawing::Size(122, 42);
-			this->patient_panel_cancel_button->TabIndex = 17;
-			this->patient_panel_cancel_button->Text = L"Cancel";
-			this->patient_panel_cancel_button->UseVisualStyleBackColor = true;
-			this->patient_panel_cancel_button->Click += gcnew System::EventHandler(this, &MyForm::patient_panel_cancel_button_Click);
-			// 
-			// patient_panel_make_appointment_button
-			// 
-			this->patient_panel_make_appointment_button->Location = System::Drawing::Point(15, 142);
-			this->patient_panel_make_appointment_button->Name = L"patient_panel_make_appointment_button";
-			this->patient_panel_make_appointment_button->Size = System::Drawing::Size(122, 42);
-			this->patient_panel_make_appointment_button->TabIndex = 16;
-			this->patient_panel_make_appointment_button->Text = L"Make";
-			this->patient_panel_make_appointment_button->UseVisualStyleBackColor = true;
-			this->patient_panel_make_appointment_button->Click += gcnew System::EventHandler(this, &MyForm::patient_panel_make_appointment_button_Click);
-			// 
-			// patient_panel_complaint_button
-			// 
-			this->patient_panel_complaint_button->Location = System::Drawing::Point(15, 79);
-			this->patient_panel_complaint_button->Name = L"patient_panel_complaint_button";
-			this->patient_panel_complaint_button->Size = System::Drawing::Size(122, 42);
-			this->patient_panel_complaint_button->TabIndex = 7;
-			this->patient_panel_complaint_button->Text = L"Complain";
-			this->patient_panel_complaint_button->UseVisualStyleBackColor = true;
-			this->patient_panel_complaint_button->Click += gcnew System::EventHandler(this, &MyForm::patient_panel_complaint_button_Click);
-			// 
-			// patient_panel_view_detail_button
-			// 
-			this->patient_panel_view_detail_button->Location = System::Drawing::Point(15, 21);
-			this->patient_panel_view_detail_button->Name = L"patient_panel_view_detail_button";
-			this->patient_panel_view_detail_button->Size = System::Drawing::Size(122, 42);
-			this->patient_panel_view_detail_button->TabIndex = 6;
-			this->patient_panel_view_detail_button->Text = L"View details";
-			this->patient_panel_view_detail_button->UseVisualStyleBackColor = true;
-			this->patient_panel_view_detail_button->Click += gcnew System::EventHandler(this, &MyForm::patient_panel_view_detail_button_Click);
-			// 
-			// patient_panel_logout_button
-			// 
-			this->patient_panel_logout_button->Location = System::Drawing::Point(298, 0);
-			this->patient_panel_logout_button->Name = L"patient_panel_logout_button";
-			this->patient_panel_logout_button->Size = System::Drawing::Size(122, 42);
-			this->patient_panel_logout_button->TabIndex = 5;
-			this->patient_panel_logout_button->Text = L"Logout";
-			this->patient_panel_logout_button->UseVisualStyleBackColor = true;
-			this->patient_panel_logout_button->Click += gcnew System::EventHandler(this, &MyForm::patient_panel_logout_button_Click);
 			// 
 			// label3
 			// 
@@ -1018,104 +945,15 @@ namespace temp {
 			this->doctor_panel_view_detail->UseVisualStyleBackColor = true;
 			this->doctor_panel_view_detail->Click += gcnew System::EventHandler(this, &MyForm::doctor_panel_view_detail_Click);
 			// 
-			// make_appointment_panel
-			// 
-			this->make_appointment_panel->Controls->Add(this->dateTimePicker1);
-			this->make_appointment_panel->Controls->Add(this->make_appointment_back_button);
-			this->make_appointment_panel->Controls->Add(this->make_appointment_ok_button);
-			this->make_appointment_panel->Controls->Add(this->make_appointment_panel_combo_box);
-			this->make_appointment_panel->Location = System::Drawing::Point(0, 0);
-			this->make_appointment_panel->Name = L"make_appointment_panel";
-			this->make_appointment_panel->Size = System::Drawing::Size(345, 160);
-			this->make_appointment_panel->TabIndex = 16;
-			// 
-			// dateTimePicker1
-			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(0, 53);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(325, 29);
-			this->dateTimePicker1->TabIndex = 26;
-			// 
-			// make_appointment_back_button
-			// 
-			this->make_appointment_back_button->Location = System::Drawing::Point(146, 99);
-			this->make_appointment_back_button->Name = L"make_appointment_back_button";
-			this->make_appointment_back_button->Size = System::Drawing::Size(122, 42);
-			this->make_appointment_back_button->TabIndex = 25;
-			this->make_appointment_back_button->Text = L"Back";
-			this->make_appointment_back_button->UseVisualStyleBackColor = true;
-			this->make_appointment_back_button->Click += gcnew System::EventHandler(this, &MyForm::make_appointment_back_button_Click);
-			// 
-			// make_appointment_ok_button
-			// 
-			this->make_appointment_ok_button->Location = System::Drawing::Point(3, 99);
-			this->make_appointment_ok_button->Name = L"make_appointment_ok_button";
-			this->make_appointment_ok_button->Size = System::Drawing::Size(122, 42);
-			this->make_appointment_ok_button->TabIndex = 24;
-			this->make_appointment_ok_button->Text = L"Ok";
-			this->make_appointment_ok_button->UseVisualStyleBackColor = true;
-			this->make_appointment_ok_button->Click += gcnew System::EventHandler(this, &MyForm::make_appointment_ok_button_Click);
-			// 
-			// make_appointment_panel_combo_box
-			// 
-			this->make_appointment_panel_combo_box->FormattingEnabled = true;
-			this->make_appointment_panel_combo_box->Location = System::Drawing::Point(3, 17);
-			this->make_appointment_panel_combo_box->Name = L"make_appointment_panel_combo_box";
-			this->make_appointment_panel_combo_box->Size = System::Drawing::Size(325, 30);
-			this->make_appointment_panel_combo_box->TabIndex = 1;
-			this->make_appointment_panel_combo_box->DropDown += gcnew System::EventHandler(this, &MyForm::make_appointment_panel_combo_box_DropDown);
-			// 
-			// cancel_appointment_panel
-			// 
-			this->cancel_appointment_panel->Controls->Add(this->cancel_appointment_back_button);
-			this->cancel_appointment_panel->Controls->Add(this->cancel_appointment_ok_button);
-			this->cancel_appointment_panel->Controls->Add(this->cancelappointment_combobox);
-			this->cancel_appointment_panel->Location = System::Drawing::Point(872, 458);
-			this->cancel_appointment_panel->Name = L"cancel_appointment_panel";
-			this->cancel_appointment_panel->Size = System::Drawing::Size(345, 160);
-			this->cancel_appointment_panel->TabIndex = 27;
-			// 
-			// cancel_appointment_back_button
-			// 
-			this->cancel_appointment_back_button->Location = System::Drawing::Point(146, 99);
-			this->cancel_appointment_back_button->Name = L"cancel_appointment_back_button";
-			this->cancel_appointment_back_button->Size = System::Drawing::Size(122, 42);
-			this->cancel_appointment_back_button->TabIndex = 25;
-			this->cancel_appointment_back_button->Text = L"Back";
-			this->cancel_appointment_back_button->UseVisualStyleBackColor = true;
-			this->cancel_appointment_back_button->Click += gcnew System::EventHandler(this, &MyForm::cancel_appointment_back_button_Click);
-			// 
-			// cancel_appointment_ok_button
-			// 
-			this->cancel_appointment_ok_button->Location = System::Drawing::Point(3, 99);
-			this->cancel_appointment_ok_button->Name = L"cancel_appointment_ok_button";
-			this->cancel_appointment_ok_button->Size = System::Drawing::Size(122, 42);
-			this->cancel_appointment_ok_button->TabIndex = 24;
-			this->cancel_appointment_ok_button->Text = L"Ok";
-			this->cancel_appointment_ok_button->UseVisualStyleBackColor = true;
-			this->cancel_appointment_ok_button->Click += gcnew System::EventHandler(this, &MyForm::cancel_appointment_ok_button_Click);
-			// 
-			// cancelappointment_combobox
-			// 
-			this->cancelappointment_combobox->FormattingEnabled = true;
-			this->cancelappointment_combobox->Location = System::Drawing::Point(3, 17);
-			this->cancelappointment_combobox->Name = L"cancelappointment_combobox";
-			this->cancelappointment_combobox->Size = System::Drawing::Size(325, 30);
-			this->cancelappointment_combobox->TabIndex = 1;
-			this->cancelappointment_combobox->DropDown += gcnew System::EventHandler(this, &MyForm::cancelappointment_combobox_DropDown);
-			// 
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1302, 749);
-			this->Controls->Add(this->cancel_appointment_panel);
-			this->Controls->Add(this->make_appointment_panel);
 			this->Controls->Add(this->complain_panel);
 			this->Controls->Add(this->doctor_panel);
 			this->Controls->Add(this->admin_panel);
 			this->Controls->Add(this->main_panel);
 			this->Controls->Add(this->view_detail_panel);
-			this->Controls->Add(this->patient_panel);
 			this->Controls->Add(this->forget_password_panel);
 			this->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -1128,7 +966,6 @@ namespace temp {
 			this->forget_password_panel->PerformLayout();
 			this->signup_panel->ResumeLayout(false);
 			this->signup_panel->PerformLayout();
-			this->patient_panel->ResumeLayout(false);
 			this->view_detail_panel->ResumeLayout(false);
 			this->view_detail_panel->PerformLayout();
 			this->complain_panel->ResumeLayout(false);
@@ -1136,8 +973,6 @@ namespace temp {
 			this->main_panel->ResumeLayout(false);
 			this->admin_panel->ResumeLayout(false);
 			this->doctor_panel->ResumeLayout(false);
-			this->make_appointment_panel->ResumeLayout(false);
-			this->cancel_appointment_panel->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -1159,8 +994,12 @@ namespace temp {
 				bool c = userp->login(id, password);
 				if (c == 1)
 				{
-					login_panel->Visible = false; // show the panel
-					patient_panel->Visible = true; // hide the panel
+					//login_panel->Visible = false; // show the panel
+					//patient_panel->Visible = true; // hide the panel
+					
+					MyForm::Hide();
+					Patient_Form^ P = gcnew Patient_Form();
+					P->Show();
 				}
 			}
 			else if (ismain_panel_doctor_button == true)
@@ -1168,8 +1007,12 @@ namespace temp {
 				bool c = userd->login(id, password);
 				if (c == 1)
 				{
-					login_panel->Visible = false; // show the panel
-					doctor_panel->Visible = true; // hide the panel
+					//login_panel->Visible = false; // show the panel
+					//doctor_panel->Visible = true; // hide the panel
+
+					this->Hide();
+					Doctor_Form^ P = gcnew Doctor_Form();
+					P->Show();
 					login_panel_signup_button->Visible = true;
 				}
 			}
@@ -1178,13 +1021,17 @@ namespace temp {
 				bool c = usera->login(id, password);
 				if (c == 1)
 				{
-					login_panel->Visible = false; // show the panel
-					admin_panel->Visible = true; // hide the panel
+					//login_panel->Visible = false; // show the panel
+					//admin_panel->Visible = true; // hide the panel
+
+					this->Hide();
+					Admin_Form^ P = gcnew Admin_Form();
+					P->Show();
 					login_panel_signup_button->Visible = true;
 				}
 			}
-			login_panel_id_textbox->Text = "";
-			login_panel_password_textbox->Text = "";	
+			/*login_panel_id_textbox->Text = "";
+			login_panel_password_textbox->Text = "";	*/
 		}
 		private: System::Void signup_button_Click(System::Object^ sender, System::EventArgs^ e)
 		{
@@ -1261,12 +1108,12 @@ namespace temp {
 		private: System::Void patient_panel_logout_button_Click(System::Object^ sender, System::EventArgs^ e) 
 		{
 			login_panel->Visible = true; // show the panel
-			patient_panel->Visible = false; // hide the panel
+			//patient_panel->Visible = false; // hide the panel
 		}
 		private: System::Void patient_panel_view_detail_button_Click(System::Object^ sender, System::EventArgs^ e) 
 		{
 			view_detail_panel->Visible = true; // show the panel
-			patient_panel->Visible = false; // hide the panel
+			//patient_panel->Visible = false; // hide the panel
 			view_detail_panel_first_name_textbox->Text = userp->first_name;
 			view_detail_panel_last_name_textbox->Text = userp->last_name;
 			view_detail_panel_id_textbox->Text = userp->id;
@@ -1282,7 +1129,7 @@ namespace temp {
 			if(ismain_panel_patient_button==1)
 			{
 				view_detail_panel->Visible = false; // show the panel
-				patient_panel->Visible = true; // hide the panel 
+				//patient_panel->Visible = true; // hide the panel 
 			}
 			else if(ismain_panel_doctor_button==1)
 			{
@@ -1332,7 +1179,7 @@ namespace temp {
 		private: System::Void patient_panel_complaint_button_Click(System::Object^ sender, System::EventArgs^ e)
 		{
 			complain_panel->Visible = true; // show the panel
-			patient_panel->Visible = false; // hide the panel
+			//patient_panel->Visible = false; // hide the panel
 		}
 		private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		}
@@ -1355,7 +1202,8 @@ namespace temp {
 		{
 			complain_panel->Visible = false; // show the panel
 			if (ismain_panel_patient_button == true)
-				patient_panel->Visible = true; // hide the panel
+				;
+				//patient_panel->Visible = true; // hide the panel
 			else if(ismain_panel_doctor_button==1)
 				doctor_panel->Visible = true; // hide the panel
 			else
@@ -1427,7 +1275,7 @@ namespace temp {
 			complain_panel->Visible = true;
 			admin_panel->Visible = false;
 		}
-		private: System::Void make_appointment_panel_combo_box_DropDown(System::Object^ sender, System::EventArgs^ e)
+		/*private: System::Void make_appointment_panel_combo_box_DropDown(System::Object^ sender, System::EventArgs^ e)
 		{
 			try {
 				String^ connString = rr;
@@ -1448,14 +1296,14 @@ namespace temp {
 			{
 				MessageBox::Show("Failed to connect to database", "Database Connection Error", MessageBoxButtons::OK);
 			}
-		}
-		private: System::Void patient_panel_make_appointment_button_Click(System::Object^ sender, System::EventArgs^ e)
+		}*/
+		/*private: System::Void patient_panel_make_appointment_button_Click(System::Object^ sender, System::EventArgs^ e)
 		{
 			make_appointment_panel->Visible = true;
 			patient_panel->Visible = false;
-		}
-		private: System::Void make_appointment_ok_button_Click(System::Object^ sender, System::EventArgs^ e)
-		{
+		}*/
+		/*private: System::Void make_appointment_ok_button_Click(System::Object^ sender, System::EventArgs^ e)*/
+		/*{
 			DateTime now = DateTime::Now;
 			DateTime selectedDate = dateTimePicker1->Value;
 			String^ doctor_id = make_appointment_panel_combo_box->SelectedItem->ToString();
@@ -1487,20 +1335,20 @@ namespace temp {
 				userp->make_appointment(selectedDate,y_id,x,y_name);
 				make_appointment_panel_combo_box->Text="";
 			}
-		}
-		private: System::Void make_appointment_back_button_Click(System::Object^ sender, System::EventArgs^ e) 
+		}*/
+		/*private: System::Void make_appointment_back_button_Click(System::Object^ sender, System::EventArgs^ e) 
 		{
 			make_appointment_panel->Visible = false;
 			patient_panel->Visible = true;
-		}
-		private: System::Void patient_panel_cancel_button_Click(System::Object^ sender, System::EventArgs^ e)
+		}*/
+		/*private: System::Void patient_panel_cancel_button_Click(System::Object^ sender, System::EventArgs^ e)
 		{
 			cancel_appointment_panel->Visible = true;
 			patient_panel->Visible = false;
 		}
 			   String^ a;
-			   DateTime b;
-		private: System::Void cancelappointment_combobox_DropDown(System::Object^ sender, System::EventArgs^ e)
+			   DateTime b;*/
+		/*private: System::Void cancelappointment_combobox_DropDown(System::Object^ sender, System::EventArgs^ e)
 		{
 			try {
 				String^ patientId = userp->getid();
@@ -1526,8 +1374,8 @@ namespace temp {
 			{
 				MessageBox::Show("Failed to connect to database", "Database Connection Error", MessageBoxButtons::OK);
 			}
-		}
-		private: System::Void cancel_appointment_back_button_Click(System::Object^ sender, System::EventArgs^ e) 
+		}*/
+		/*private: System::Void cancel_appointment_back_button_Click(System::Object^ sender, System::EventArgs^ e) 
 		{
 			cancel_appointment_panel->Visible = false;
 			patient_panel->Visible = true;
@@ -1539,6 +1387,6 @@ namespace temp {
 				userp->cancel_appointment(selectedOption);
 		}
 
-		
+		*/
 	};
 }

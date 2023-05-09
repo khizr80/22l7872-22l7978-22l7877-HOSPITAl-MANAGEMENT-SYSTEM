@@ -123,20 +123,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Admin_Form.cpp" />
+    <ClCompile Include="Doctor_Form.cpp" />
+    <ClCompile Include="Patient_Form.cpp" />
     <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="admin.h" />
+    <ClInclude Include="Admin_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="doctor.h" />
+    <ClInclude Include="Doctor_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="patient.h" />
+    <ClInclude Include="Patient_Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient_Form.resx">
+      <DependentUpon>Patient_Form.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
