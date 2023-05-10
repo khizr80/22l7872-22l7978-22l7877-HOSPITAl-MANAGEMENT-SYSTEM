@@ -30,6 +30,8 @@ namespace temp {
 			//
 			view_detail_panel->Hide();
 			complain_panel->Hide();
+			view_complain_panel->Hide();
+			textBox1->Hide();
 		}
 
 	protected:
@@ -72,6 +74,9 @@ namespace temp {
 	private: System::Windows::Forms::Button^ view_complain;
 	private: System::Windows::Forms::Panel^ view_complain_panel;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ button1;
+
 
 	protected:
 
@@ -116,6 +121,8 @@ namespace temp {
 			this->view_complain = (gcnew System::Windows::Forms::Button());
 			this->view_complain_panel = (gcnew System::Windows::Forms::Panel());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->view_detail_panel->SuspendLayout();
 			this->complain_panel->SuspendLayout();
 			this->view_complain_panel->SuspendLayout();
@@ -134,7 +141,7 @@ namespace temp {
 			// 
 			// admin_panel_logout_button
 			// 
-			this->admin_panel_logout_button->Location = System::Drawing::Point(23, 291);
+			this->admin_panel_logout_button->Location = System::Drawing::Point(23, 267);
 			this->admin_panel_logout_button->Name = L"admin_panel_logout_button";
 			this->admin_panel_logout_button->Size = System::Drawing::Size(122, 42);
 			this->admin_panel_logout_button->TabIndex = 18;
@@ -343,7 +350,7 @@ namespace temp {
 			// 
 			// back
 			// 
-			this->back->Location = System::Drawing::Point(23, 227);
+			this->back->Location = System::Drawing::Point(23, 199);
 			this->back->Name = L"back";
 			this->back->Size = System::Drawing::Size(122, 42);
 			this->back->TabIndex = 34;
@@ -366,22 +373,44 @@ namespace temp {
 			this->view_complain_panel->Controls->Add(this->dataGridView1);
 			this->view_complain_panel->Location = System::Drawing::Point(849, 5);
 			this->view_complain_panel->Name = L"view_complain_panel";
-			this->view_complain_panel->Size = System::Drawing::Size(291, 381);
+			this->view_complain_panel->Size = System::Drawing::Size(381, 381);
 			this->view_complain_panel->TabIndex = 36;
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(14, 7);
+			this->dataGridView1->Location = System::Drawing::Point(0, 0);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(240, 371);
+			this->dataGridView1->RowHeadersWidth = 75;
+			this->dataGridView1->Size = System::Drawing::Size(381, 381);
 			this->dataGridView1->TabIndex = 0;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(610, 199);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(219, 172);
+			this->textBox1->TabIndex = 37;
+			this->textBox1->Text = L"Hospital name :: mayon hospital\r\n\r\nSize: 10000 square feet\r\n\r\n\r\n";
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(23, 330);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(122, 42);
+			this->button1->TabIndex = 38;
+			this->button1->Text = L"Details";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Admin_Form::button1_Click_1);
 			// 
 			// Admin_Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1229, 513);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->view_complain_panel);
 			this->Controls->Add(this->view_complain);
 			this->Controls->Add(this->back);
@@ -399,6 +428,7 @@ namespace temp {
 			this->view_complain_panel->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -459,6 +489,8 @@ private: System::Void view_detail_panel_change_button_Click(System::Object^ send
 private: System::Void back_Click(System::Object^ sender, System::EventArgs^ e) {
 	view_detail_panel->Hide();
 	complain_panel->Hide();
+	view_complain_panel->Hide();
+	textBox1->Hide();
 }
 private: System::Void complain_panel_ok_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ y = complain_panel_textbox->Text;
@@ -468,43 +500,71 @@ private: System::Void complain_panel_ok_button_Click(System::Object^ sender, Sys
 }
 	private: System::Void view_complain_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		// Connection string to your database
-		String^ connectionString = rr;
+		
 
-		// SQL query to retrieve data from the table
-		String^ query = "SELECT complain FROM complain";
+		//dataGridView1->DataSource = ;
+		//dataGridView1->Columns-> ;
+		//// Connection string to your database
+		//String^ connectionString = rr;
 
-		// Create the SqlConnection and SqlCommand objects
-		SqlConnection^ connection = gcnew SqlConnection(connectionString);
+		//// SQL query to retrieve data from the table
+		//String^ query = "SELECT complain FROM complain";
+
+		//// Create the SqlConnection and SqlCommand objects
+		//SqlConnection^ connection = gcnew SqlConnection(connectionString);
+		//SqlCommand^ command = gcnew SqlCommand(query, connection);
+
+		//// Open the database connection
+		//connection->Open();
+
+		//// Create a DataTable to hold the retrieved data
+		//DataTable^ dataTable = gcnew DataTable();
+
+		//try
+		//{
+		//	// Execute the SQL query and fill the DataTable with the results
+		//	SqlDataAdapter^ adapter = gcnew SqlDataAdapter(command);
+		//	adapter->Fill(dataTable);
+
+		//	// Bind the DataTable to the DataGridView control
+		//	dataGridView1->DataSource = dataTable;
+		//}
+		//catch (Exception^ ex)
+		//{
+		//	// Handle any exceptions that occur during the data retrieval process
+		//	MessageBox::Show("Error: " + ex->Message);
+		//}
+		//finally
+		//{
+		//	// Close the database connection
+		//	connection->Close();
+		//}
+// Create a SqlConnection and open the database connection
+		SqlConnection^ connection = gcnew SqlConnection(rr);
+		connection->Open();
+		// Create a SqlCommand to select all data from the table
+		String^ query = "SELECT * FROM [complain]" ;
 		SqlCommand^ command = gcnew SqlCommand(query, connection);
 
-		// Open the database connection
-		connection->Open();
+		// Create a SqlDataAdapter to retrieve the data
+		SqlDataAdapter^ adapter = gcnew SqlDataAdapter(command);
 
 		// Create a DataTable to hold the retrieved data
 		DataTable^ dataTable = gcnew DataTable();
 
-		try
-		{
-			// Execute the SQL query and fill the DataTable with the results
-			SqlDataAdapter^ adapter = gcnew SqlDataAdapter(command);
-			adapter->Fill(dataTable);
+		// Fill the DataTable with data from the table
+		adapter->Fill(dataTable);
 
-			// Bind the DataTable to the DataGridView control
-			dataGridView1->DataSource = dataTable;
-		}
-		catch (Exception^ ex)
-		{
-			// Handle any exceptions that occur during the data retrieval process
-			MessageBox::Show("Error: " + ex->Message);
-		}
-		finally
-		{
-			// Close the database connection
-			connection->Close();
-		}
-	
+		// Set the DataTable as the data source for the DataGridView
+		dataGridView1->DataSource = dataTable;
+
+		// Close the database connection
+		connection->Close();
+
 
 		}
-	};
+	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		textBox1->Show();
+	}
+};
 }

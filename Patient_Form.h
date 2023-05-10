@@ -26,6 +26,7 @@ namespace temp {
 			view_detail_panel->Hide();
 			complain_panel->Hide();
 			PharmacyPannel->Hide();
+			dataGridView1->Hide();
 			user = obj;
 			//
 			//TODO: Add the constructor code here
@@ -93,6 +94,8 @@ namespace temp {
 	private: System::Windows::Forms::CheckBox^ CheckBox1;
 	private: System::Windows::Forms::Button^ Pharmacy;
 	private: System::Windows::Forms::Button^ back;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Button^ button1;
 
 
 
@@ -169,11 +172,14 @@ namespace temp {
 			this->CheckBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->Pharmacy = (gcnew System::Windows::Forms::Button());
 			this->back = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->cancel_appointment_panel->SuspendLayout();
 			this->view_detail_panel->SuspendLayout();
 			this->make_appointment_panel->SuspendLayout();
 			this->complain_panel->SuspendLayout();
 			this->PharmacyPannel->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// cancel_appointment_panel
@@ -446,7 +452,7 @@ namespace temp {
 			// 
 			// patient_panel_logout_button
 			// 
-			this->patient_panel_logout_button->Location = System::Drawing::Point(12, 370);
+			this->patient_panel_logout_button->Location = System::Drawing::Point(12, 421);
 			this->patient_panel_logout_button->Name = L"patient_panel_logout_button";
 			this->patient_panel_logout_button->Size = System::Drawing::Size(122, 42);
 			this->patient_panel_logout_button->TabIndex = 5;
@@ -584,11 +590,31 @@ namespace temp {
 			this->back->UseVisualStyleBackColor = true;
 			this->back->Click += gcnew System::EventHandler(this, &Patient_Form::back_Click);
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(930, 196);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(286, 286);
+			this->dataGridView1->TabIndex = 34;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(12, 367);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(122, 42);
+			this->button1->TabIndex = 35;
+			this->button1->Text = L"Medical";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Patient_Form::button1_Click);
+			// 
 			// Patient_Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1274, 602);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->back);
 			this->Controls->Add(this->Pharmacy);
 			this->Controls->Add(this->PharmacyPannel);
@@ -611,6 +637,7 @@ namespace temp {
 			this->complain_panel->PerformLayout();
 			this->PharmacyPannel->ResumeLayout(false);
 			this->PharmacyPannel->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -807,6 +834,44 @@ private: System::Void back_Click(System::Object^ sender, System::EventArgs^ e) {
 	view_detail_panel->Hide();
 	complain_panel->Hide();
 	PharmacyPannel->Hide();
+	dataGridView1->Hide();
+
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	dataGridView1->Show();
+	String^ patientId = user->getid();
+	String^ connString = rr;
+	SqlConnection sqlConn(connString);
+	SqlConnection^ connection = gcnew SqlConnection(connString);
+
+	// SQL query to retrieve appointment history
+	String^ query = "SELECT history FROM appointment WHERE patient_id = @PatientID";
+
+	// Create a SqlCommand object
+	SqlCommand^ cmd2 = gcnew SqlCommand(query, connection);
+
+	// Add the patient ID parameter to the command
+	cmd2->Parameters->AddWithValue("@PatientID", patientId);
+
+	// Create a SqlDataAdapter to fetch the data
+	SqlDataAdapter^ adapter = gcnew SqlDataAdapter(cmd2);
+
+	// Create a DataSet to hold the retrieved data
+	DataSet^ appointmentDataSet = gcnew DataSet();
+
+	// Open the database connection
+	connection->Open();
+
+	// Fill the DataSet with the appointment data
+	adapter->Fill(appointmentDataSet);
+
+	// Close the database connection
+	connection->Close();
+
+	// Display the appointment data in a DataGridView (or any other view)
+	// Assuming you have a DataGridView control named "dataGridView1" on your form
+	dataGridView1->DataSource = appointmentDataSet->Tables[0];
+
 }
 };
 }

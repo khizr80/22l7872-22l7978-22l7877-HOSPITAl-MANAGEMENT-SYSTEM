@@ -203,4 +203,8 @@ public:
 			MessageBox::Show("Failed to connect to database", "Database Connection Error", MessageBoxButtons::OK);
 		}
 	}
+	String^ getid()
+	{
+		return id;
+	}
 };

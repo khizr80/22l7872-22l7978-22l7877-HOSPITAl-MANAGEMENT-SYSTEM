@@ -195,19 +195,25 @@ public:
 			countCommand.Parameters->AddWithValue("@doc_id", doctor_id);
 			appointmentCount = (int)countCommand.ExecuteScalar();
 
-			if (appointmentCount >= 3)
+			if (appointmentCount >= 20)
 			{
 				MessageBox::Show("Failed to make appointment", "Appointment limit reached for the given doctor on the given date", MessageBoxButtons::OK);
 				return;
 			}
 
 			// Insert the appointment
-			String^ sqlInsertQuery = "INSERT INTO [appointment] (doctor_id, patient_id, date, doctor_name) VALUES (@doc_id, @id, @date, @doc_name);";
+			String^ sqlInsertQuery = "INSERT INTO [appointment] (doctor_id, patient_id, date, doctor_name,fff,lll,aaa,phphph,ininin,done) VALUES (@doc_id, @id, @date, @doc_name,@f,@l,@a,@ph,@in,@done);";
 			SqlCommand insertCommand(sqlInsertQuery, % sqlConn);
 			insertCommand.Parameters->AddWithValue("@doc_id", doctor_id);
 			insertCommand.Parameters->AddWithValue("@id", iid);
 			insertCommand.Parameters->AddWithValue("@date", date);
+			insertCommand.Parameters->AddWithValue("@f", first_name);
+			insertCommand.Parameters->AddWithValue("@l", last_name);
+			insertCommand.Parameters->AddWithValue("@a", age);
+			insertCommand.Parameters->AddWithValue("@ph", phone_no);
+			insertCommand.Parameters->AddWithValue("@in", insurance_no);
 			insertCommand.Parameters->AddWithValue("@doc_name", doc_name);
+			insertCommand.Parameters->AddWithValue("@done", "0");
 			insertCommand.ExecuteNonQuery();
 
 			MessageBox::Show("Success", "Appointment book", MessageBoxButtons::OK);
